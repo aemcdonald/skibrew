@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BreweryCard from '../BreweryCard/BreweryCard';
 import './BreweryContainer.css';
 
 class BreweryContainer extends Component {
@@ -8,7 +9,10 @@ class BreweryContainer extends Component {
 
   render() {
     return(
-      <h3>BreweryContainer goes here</h3>
+      <section>
+        <h3>BreweryContainer goes here</h3>
+        <BreweryCard />
+      </section>
     )
   }
 }
