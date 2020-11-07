@@ -1,10 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BreweryCard from '../BreweryCard/BreweryCard';
 import './Favorites.css';
 
-const Favorites = () => {
+const Favorites = (props) => {
+  const favoriteBreweries = props.favorites.map(brewery => {
+    return(
+      <BreweryCard
+        key={brewery.id}
+        brewery={brewery}
+      />
+    )
+  })
+
   return(
-    <h5>Favorites</h5>
+    <section>
+      <h5>Favorites</h5>
+      {favoriteBreweries}
+    </section>
   )
 }
 export default Favorites
