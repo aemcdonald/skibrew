@@ -12,11 +12,7 @@ class BreweryContainer extends Component {
       return(
         <BreweryCard
           key={brewery.id}
-          name={brewery.name}
-          street={brewery.street}
-          state={brewery.state}
-          postal_code={brewery.postal_code}
-          url={brewery.website_url}
+          brewery={brewery}
         />
       )
     })
