@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BreweryCard from '../BreweryCard/BreweryCard';
+import PropTypes from 'prop-types';
 import './BreweryContainer.css';
 
 class BreweryContainer extends Component {
@@ -29,3 +30,7 @@ class BreweryContainer extends Component {
 }
 
 export default BreweryContainer;
+
+BreweryContainer.propTypes = {
+  breweries: PropTypes.array
+}

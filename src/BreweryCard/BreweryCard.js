@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './BreweryCard.css';
 
 const BreweryCard = (props) => {
@@ -13,4 +14,9 @@ const BreweryCard = (props) => {
     </section>
   )
 }
+
 export default BreweryCard;
+
+BreweryCard.propTypes = {
+  brewery: PropTypes.object
+}
