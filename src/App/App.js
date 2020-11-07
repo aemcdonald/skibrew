@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ResortCard from '../ResortCard/ResortCard';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import Favorites from '../Favorites/Favorites';
-import { Route, Link, NavLink } from 'react-router-dom'
+import { Route, Link, NavLink, Switch } from 'react-router-dom'
 import { getAllBreweries } from '../apiCalls'
 import './App.css';
 
@@ -54,6 +54,7 @@ class App extends Component {
           <Link to='/Favorites'>Favorites</Link>
         </nav>
         <section>
+        <Switch>
           <Route exact path='/'>
             {resortCards}
           </Route>
@@ -66,6 +67,7 @@ class App extends Component {
             })
             return <BreweryContainer breweries={resortBreweries} />
           }} />
+        </Switch>
         </section>
       </main>
     )
