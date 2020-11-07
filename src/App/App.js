@@ -52,13 +52,15 @@ class App extends Component {
           <Link to='/'>Home</Link>
         </nav>
         <section>
+          <Route exact path='/'>
+            {resortCards}
+          </Route>
           <Route exact path='/:resort' render={({ match }) => {
             const resortBreweries = this.state.breweries.filter(brewery => {
               return match.params.resort === brewery.city
             })
             return <BreweryContainer breweries={resortBreweries} />
           }} />
-          {resortCards}
         </section>
       </main>
     )
