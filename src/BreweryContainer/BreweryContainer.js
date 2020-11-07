@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BreweryCard from '../BreweryCard/BreweryCard';
+import PropTypes from 'prop-types';
 import './BreweryContainer.css';
 
 class BreweryContainer extends Component {
