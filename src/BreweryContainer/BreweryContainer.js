@@ -25,7 +25,7 @@ class BreweryContainer extends Component {
   render() {
     return(
       <section>
-        <h3>BEER!</h3>
+        <h3>Apres Ski Brewery Choices</h3>
           {this.getResortBreweries()}
       </section>
     )
