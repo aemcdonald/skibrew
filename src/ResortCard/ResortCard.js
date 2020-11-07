@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ResortCard.css';
 
-const ResortCard = () => {
+const ResortCard = (props) => {
   return(
-    <h2>Ski Area Name</h2>
+    <section key={props.id}>
+      <Link to={`/${props.name}`}>
+        {props.name}
+      </ Link>
+    </section>
   )
 }
 export default ResortCard
