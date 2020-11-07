@@ -9,6 +9,7 @@ const Favorites = (props) => {
       <BreweryCard
         key={brewery.id}
         brewery={brewery}
+        onFav={true}
       />
     )
   })
