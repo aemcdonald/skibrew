@@ -8,7 +8,7 @@ const BreweryCard = (props) => {
         <p>{props.brewery.phone.slice(0, 3)}-{props.brewery.phone.slice(3, 6)}-{props.brewery.phone.slice(6, 9)}</p>
         <p>Address: {props.brewery.street}</p>
         <p>{props.brewery.city}, CO {props.brewery.postal_code}</p>
-        <p>Brewery Link: {props.brewery.url}</p>
+        <p>Brewery Link: {props.brewery.website_url}</p>
       <button type='button'>Add to Favorites</button>
     </section>
   )
