@@ -59,8 +59,30 @@ describe('BreweryCard', () => {
     expect(favBtn).toBeInTheDocument();
 
     userEvent.click(favBtn);
-    
+
     expect(mockFn).toHaveBeenCalledTimes(1);
     expect(mockFn).toHaveBeenCalledWith(mockBrewery);
+  });
+
+  it('Should not render the favorite button if passed onFav props', () => {
+    const mockBrewery = {
+      name: 'Storm Peak Brewing',
+      phone: '1234567890',
+      street: '123 Abc St',
+      city: 'Steamboat Springs',
+      postal_code: '12345',
+      website_url: 'URL'
+    }
+
+    const { getByText, queryByTestId } = render(
+        <BreweryCard
+          key={1}
+          brewery={mockBrewery}
+          onFav={true}
+        />
+    )
+
+    const favBtn = screen.queryByTestId('favBtn')
+    expect(favBtn).not.toBeInTheDocument()
   });
 });
