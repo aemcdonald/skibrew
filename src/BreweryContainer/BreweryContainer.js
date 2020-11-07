@@ -14,6 +14,7 @@ class BreweryContainer extends Component {
         <BreweryCard
           key={brewery.id}
           brewery={brewery}
+          handleClick={this.props.addFavorite}
         />
       )
     })
