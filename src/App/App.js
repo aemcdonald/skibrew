@@ -8,12 +8,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      breweries: []
+      breweries: [],
+      error: ''
     }
   }
 
   componentDidMount = async () => {
     const allBreweries = await getAllBreweries()
+    .catch(error => {
+      this.setState({ error: 'Failed to retrieve breweries'})
+    })
     this.setState({ breweries: allBreweries.flat()})
     console.log(allBreweries.flat());
   }
