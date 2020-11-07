@@ -14,4 +14,9 @@ const BreweryCard = (props) => {
     </section>
   )
 }
+
 export default BreweryCard;
+
+BreweryCard.propTypes = {
+  brewery: PropTypes.object
+}
