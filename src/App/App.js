@@ -50,6 +50,7 @@ class App extends Component {
         <h1>Ski Brew</h1>
         <nav>
           <Link to='/'>Home</Link>
+          <Link to='/Favorites'>Favorites</Link>
         </nav>
         <section>
           <Route exact path='/'>
