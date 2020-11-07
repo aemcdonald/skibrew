@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResortCard from '../ResortCard/ResortCard';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
+import { Route, Link, NavLink } from 'react-router-dom'
 import { getAllBreweries } from '../apiCalls'
 import './App.css';
 
@@ -31,7 +32,6 @@ class App extends Component {
       this.setState({ error: 'Failed to retrieve breweries'})
     })
     this.setState({ breweries: allBreweries.flat()})
-    console.log(allBreweries.flat());
   }
 
   //need to map over resorts
@@ -52,6 +52,9 @@ class App extends Component {
     return(
       <main>
         <h1>Ski Brew</h1>
+        <nav>
+          <Link to='/'>Home</Link>
+        </nav>
         <section>
           {resortCards}
         </section>
