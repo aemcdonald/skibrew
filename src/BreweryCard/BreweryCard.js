@@ -18,5 +18,6 @@ const BreweryCard = (props) => {
 export default BreweryCard;
 
 BreweryCard.propTypes = {
-  brewery: PropTypes.object
+  brewery: PropTypes.object,
+  handleClick: PropTypes.func
 }
