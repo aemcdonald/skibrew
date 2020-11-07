@@ -1,12 +1,14 @@
 import React from 'react';
 import './BreweryCard.css';
 
-const BreweryCard = () => {
+const BreweryCard = (props) => {
   return(
     <section>
-      <h4>Brewery Title</h4>
-        <p>Brewery Address</p>
-        <p>Brewery Link</p>
+      <h4>{props.name}</h4>
+        <p>Brewery Address: {props.street}</p>
+        <p>{props.state}</p>
+        <p>{props.postal_code}</p>
+        <p>Brewery Link: {props.url}</p>
       <button type='button'>Add to Favorites</button>
     </section>
   )
