@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResortCard from '../ResortCard/ResortCard';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
+import Favorites from '../Favorites/Favorites';
 import { Route, Link, NavLink } from 'react-router-dom'
 import { getAllBreweries } from '../apiCalls'
 import './App.css';
@@ -55,6 +56,9 @@ class App extends Component {
         <section>
           <Route exact path='/'>
             {resortCards}
+          </Route>
+          <Route exact path='/Favorites'>
+            <Favorites />
           </Route>
           <Route exact path='/:resort' render={({ match }) => {
             const resortBreweries = this.state.breweries.filter(brewery => {
