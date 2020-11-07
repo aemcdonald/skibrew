@@ -8,6 +8,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      resorts: [
+        { id: 1, name: 'Arapahoe Basin' },
+        { id: 2, name: 'Aspen' },
+        { id: 3, name: 'Breckenridge' },
+        { id: 4, name: 'Copper Mountain' },
+        { id: 5, name: 'Crested Butte' },
+        { id: 6, name: 'Keystone' },
+        { id: 7, name: 'Steamboat Springs' },
+        { id: 8, name: 'Telluride' },
+        { id: 9, name: 'Winter Park' },
+        { id: 10, name: 'Vail' }
+      ],
       breweries: [],
       error: ''
     }
@@ -22,12 +34,27 @@ class App extends Component {
     console.log(allBreweries.flat());
   }
 
+  //need to map over resorts
+    //need to render a resort card for each resort
+    //needs to have a Link
+
   render() {
+    const resortCards = this.state.resorts.map(resort => {
+      return (
+        <ResortCard
+          key={resort.id}
+          id={resort.id}
+          name={resort.name}
+        />
+      )
+    })
+
     return(
       <main>
         <h1>Ski Brew</h1>
-        <ResortCard />
-        <BreweryContainer />
+        <section>
+          {resortCards}
+        </section>
       </main>
     )
   }
