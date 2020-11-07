@@ -1,9 +1,11 @@
 import React from 'react';
 import './ResortCard.css';
 
-const ResortCard = () => {
+const ResortCard = (props) => {
   return(
-    <h2>Ski Area Name</h2>
+    <section key={props.id}>
+      <h2>{props.name}</h2>
+    </section>
   )
 }
 export default ResortCard
