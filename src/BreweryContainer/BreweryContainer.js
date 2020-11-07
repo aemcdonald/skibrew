@@ -14,6 +14,7 @@ class BreweryContainer extends Component {
         <BreweryCard
           key={brewery.id}
           brewery={brewery}
+          handleClick={this.props.addFavorite}
         />
       )
     })
@@ -32,5 +33,6 @@ class BreweryContainer extends Component {
 export default BreweryContainer;
 
 BreweryContainer.propTypes = {
-  breweries: PropTypes.array
+  breweries: PropTypes.array,
+  addFavorite: PropTypes.func
 }

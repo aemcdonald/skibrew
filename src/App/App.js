@@ -23,8 +23,13 @@ class App extends Component {
         { id: 10, name: 'Vail' }
       ],
       breweries: [],
+      favorites: [],
       error: ''
     }
+  }
+
+  addFavorite = (newFavorite) => {
+    this.setState({ favorites: [...this.state.favorites, newFavorite] })
   }
 
   componentDidMount = async () => {
@@ -59,13 +64,13 @@ class App extends Component {
             {resortCards}
           </Route>
           <Route exact path='/Favorites'>
-            <Favorites />
+            <Favorites favorites={this.state.favorites}/>
           </Route>
           <Route exact path='/:resort' render={({ match }) => {
             const resortBreweries = this.state.breweries.filter(brewery => {
               return match.params.resort === brewery.city
             })
-            return <BreweryContainer breweries={resortBreweries} />
+            return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite} />
           }} />
         </Switch>
         </section>
