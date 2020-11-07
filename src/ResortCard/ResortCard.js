@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ResortCard.css';
 
 const ResortCard = (props) => {
   return(
     <section key={props.id}>
-      <h2>{props.name}</h2>
+      <Link to={`/${props.name}`}>
+        {props.name}
+      </ Link>
     </section>
   )
 }
