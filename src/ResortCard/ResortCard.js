@@ -13,3 +13,8 @@ const ResortCard = (props) => {
   )
 }
 export default ResortCard
+
+ResortCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string
+}
