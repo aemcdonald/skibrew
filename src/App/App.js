@@ -10,12 +10,12 @@ class App extends Component {
     super();
     this.state = {
       resorts: [
-        { id: 1, name: 'Arapahoe Basin' },
+        // { id: 1, name: 'Arapahoe Basin' },
         { id: 2, name: 'Aspen' },
         { id: 3, name: 'Breckenridge' },
-        { id: 4, name: 'Copper Mountain' },
+        // { id: 4, name: 'Copper Mountain' },
         { id: 5, name: 'Crested Butte' },
-        { id: 6, name: 'Keystone' },
+        // { id: 6, name: 'Keystone' },
         { id: 7, name: 'Steamboat Springs' },
         { id: 8, name: 'Telluride' },
         { id: 9, name: 'Winter Park' },
@@ -33,10 +33,6 @@ class App extends Component {
     })
     this.setState({ breweries: allBreweries.flat()})
   }
-
-  //need to map over resorts
-    //need to render a resort card for each resort
-    //needs to have a Link
 
   render() {
     const resortCards = this.state.resorts.map(resort => {
@@ -56,6 +52,12 @@ class App extends Component {
           <Link to='/'>Home</Link>
         </nav>
         <section>
+          <Route exact path='/:resort' render={({ match }) => {
+            const resortBreweries = this.state.breweries.filter(brewery => {
+              return match.params.resort === brewery.city
+            })
+            return <BreweryContainer breweries={resortBreweries} />
+          }} />
           {resortCards}
         </section>
       </main>
