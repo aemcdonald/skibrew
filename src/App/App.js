@@ -29,7 +29,10 @@ class App extends Component {
   }
 
   addFavorite = (newFavorite) => {
-    this.setState({ favorites: [...this.state.favorites, newFavorite] })
+    const foundBrewery = this.state.favorites.find(favBrewery => favBrewery.name === newFavorite.name)
+    if(!foundBrewery) {
+      this.setState({ favorites: [...this.state.favorites, newFavorite] })
+    }
   }
 
   componentDidMount = async () => {
