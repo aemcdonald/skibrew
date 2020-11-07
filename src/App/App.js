@@ -3,7 +3,6 @@ import ResortCard from '../ResortCard/ResortCard';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import Favorites from '../Favorites/Favorites';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { getAllBreweries } from '../apiCalls';
 import './App.css';
 
