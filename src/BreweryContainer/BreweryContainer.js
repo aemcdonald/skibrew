@@ -33,5 +33,6 @@ class BreweryContainer extends Component {
 export default BreweryContainer;
 
 BreweryContainer.propTypes = {
-  breweries: PropTypes.array
+  breweries: PropTypes.array,
+  addFavorite: PropTypes.func
 }
