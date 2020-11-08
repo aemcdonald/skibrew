@@ -10,8 +10,3 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
-
-.brew-card {
-  text-align: center;
-  border: solid 1px;
-}
