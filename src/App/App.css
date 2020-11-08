@@ -12,3 +12,12 @@
   border: solid 2px;
   height: 110px;
 }
+
+.fav-link {
+  align-self: center;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
