@@ -46,36 +46,39 @@ class App extends Component {
   render() {
     const resortCards = this.state.resorts.map(resort => {
       return (
-        <ResortCard
-          key={resort.id}
-          id={resort.id}
-          name={resort.name}
-        />
+          <ResortCard
+            key={resort.id}
+            id={resort.id}
+            name={resort.name}
+          />
       )
     })
 
     return(
       <main>
-        <h1>Ski Brew</h1>
-        <nav>
-          <Link to='/'>Home</Link>
-          <Link to='/Favorites'>Favorites</Link>
+        <nav className='home-header'>
+          <Link to='/'>
+            <h1 className='home-title'>Ski Brew</h1>
+          </Link>
+          <Link className='fav-link' to='/Favorites'>Favorites</Link>
         </nav>
-        <section>
-        <Switch>
-          <Route exact path='/'>
-            {resortCards}
-          </Route>
-          <Route exact path='/Favorites'>
-            <Favorites favorites={this.state.favorites}/>
-          </Route>
-          <Route exact path='/:resort' render={({ match }) => {
-            const resortBreweries = this.state.breweries.filter(brewery => {
-              return match.params.resort === brewery.city
-            })
-            return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite} />
-          }} />
-        </Switch>
+        <section className=''>
+        <section className='resort-card-container'>
+          <Switch>
+              <Route exact path='/'>
+                {resortCards}
+              </Route>
+            <Route exact path='/Favorites'>
+              <Favorites favorites={this.state.favorites}/>
+            </Route>
+            <Route exact path='/:resort' render={({ match }) => {
+              const resortBreweries = this.state.breweries.filter(brewery => {
+                return match.params.resort === brewery.city
+              })
+              return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite} />
+            }} />
+          </Switch>
+          </section>
         </section>
       </main>
     )
