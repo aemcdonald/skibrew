@@ -1,6 +1,5 @@
 .fav-container {
   margin: 80px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
@@ -10,4 +9,20 @@
     text-align: center;
     font-size: 30px;
     font-weight: 300;
+}
+
+@media screen and (max-width: 1180px) {
+  .fav-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 870px) {
+  .fav-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .fav-container {
+    grid-template-columns: 1fr;
+  }
 }
