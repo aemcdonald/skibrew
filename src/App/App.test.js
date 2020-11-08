@@ -28,4 +28,27 @@ describe('App', () => {
     expect(homeLink).toBeInTheDocument();
     expect(favsLink).toBeInTheDocument();
   });
+
+  it('Should display ski resort cards', () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    )
+    const aspen = screen.getByText('Aspen');
+    const breck = screen.getByText('Breckenridge');
+    const crestedButte = screen.getByText('Crested Butte');
+    const steamboat = screen.getByText('Steamboat Springs');
+    const telluride = screen.getByText('Telluride');
+    const winterPark = screen.getByText('Winter Park');
+    const vail = screen.getByText('Vail');
+
+    expect(aspen).toBeInTheDocument();
+    expect(breck).toBeInTheDocument();
+    expect(crestedButte).toBeInTheDocument();
+    expect(steamboat).toBeInTheDocument();
+    expect(telluride).toBeInTheDocument();
+    expect(winterPark).toBeInTheDocument();
+    expect(vail).toBeInTheDocument();
+  });
 });
