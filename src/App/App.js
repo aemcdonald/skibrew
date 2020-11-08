@@ -36,11 +36,12 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const allBreweries = await getAllBreweries()
-    .catch(error => {
+    try {
+      const allBreweries = await getAllBreweries()
+      this.setState({ breweries: allBreweries.flat()})
+    } catch(error) {
       this.setState({ error: 'Failed to retrieve breweries'})
-    })
-    this.setState({ breweries: allBreweries.flat()})
+    }
   }
 
   render() {
