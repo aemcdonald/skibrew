@@ -10,3 +10,19 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
+
+@media screen and (max-width: 1180px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 870px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
