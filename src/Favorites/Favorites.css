@@ -1,0 +1,13 @@
+.fav-container {
+  margin: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.fav-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+}
