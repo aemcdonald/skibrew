@@ -23,8 +23,10 @@ class BreweryContainer extends Component {
   render() {
     return(
       <section>
-        <h3>Apres Ski Brewery Choices</h3>
-          {this.getResortBreweries()}
+        <h3 className='breweries-title'>Brewery Options Nearby</h3>
+        <div className='cards-container'>
+            {this.getResortBreweries()}
+        </div>
       </section>
     )
   }

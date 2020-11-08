@@ -4,7 +4,7 @@ import './BreweryCard.css';
 
 const BreweryCard = (props) => {
   return(
-    <section>
+    <section className='brew-card'>
       <h4>{props.brewery.name}</h4>
         <p>{props.brewery.phone.slice(0, 3)}-{props.brewery.phone.slice(3, 6)}-{props.brewery.phone.slice(6, 9)}</p>
         <p>Address: {props.brewery.street}</p>

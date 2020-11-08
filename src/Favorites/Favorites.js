@@ -16,8 +16,10 @@ const Favorites = (props) => {
 
   return(
     <section>
-      <h5>Favorites</h5>
-      {favoriteBreweries}
+      <h3 className='fav-title'>Favorites</h3>
+      <div className='fav-container'>
+        {favoriteBreweries}
+      </div>
     </section>
   )
 }
