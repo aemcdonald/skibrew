@@ -5,11 +5,11 @@ import './ResortCard.css';
 
 const ResortCard = (props) => {
   return(
-    <section key={props.id} className='resort-card'>
-      <Link to={`/${props.name}`}>
-        {props.name}
-      </ Link>
-    </section>
+      <section key={props.id} className='resort-card'>
+        <Link to={`/${props.name}`}>
+          {props.name}
+        </ Link>
+      </section>
   )
 }
 export default ResortCard
