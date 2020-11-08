@@ -15,3 +15,19 @@
   color: #444;
   border: solid 1px;
 }
+
+@media screen and (max-width: 1180px) {
+  .resort-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 870px) {
+  .resort-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .resort-card-container {
+    grid-template-columns: 1fr;
+  }
+}
