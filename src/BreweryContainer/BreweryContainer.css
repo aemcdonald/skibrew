@@ -1,0 +1,17 @@
+.breweries-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.cards-container {
+  margin: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.brew-card {
+  text-align: center;
+  border: solid 1px;
+}
