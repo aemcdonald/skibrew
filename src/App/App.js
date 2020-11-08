@@ -64,6 +64,7 @@ class App extends Component {
         </nav>
           <Switch>
               <Route exact path='/'>
+              <h2 className='resort-container-title'>Select Your Ski Area</h2>
               <section className='resort-card-container'>
                 {resortCards}
               </section>
