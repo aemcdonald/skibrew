@@ -62,11 +62,11 @@ class App extends Component {
           </Link>
           <Link className='fav-link' to='/Favorites'>Favorites</Link>
         </nav>
-        <section className=''>
-        <section className='resort-card-container'>
           <Switch>
               <Route exact path='/'>
+              <section className='resort-card-container'>
                 {resortCards}
+              </section>
               </Route>
             <Route exact path='/Favorites'>
               <Favorites favorites={this.state.favorites}/>
@@ -78,8 +78,6 @@ class App extends Component {
               return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite} />
             }} />
           </Switch>
-          </section>
-        </section>
       </main>
     )
   }
