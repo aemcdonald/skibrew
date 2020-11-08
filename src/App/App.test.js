@@ -1,8 +1,12 @@
 import React from 'react';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { createMemoryHistory } from 'history';
+import { getAllBreweries } from '../apiCalls';
+jest.mock('../apiCalls');
 
 describe('App', () => {
   it('Should display a title', () => {
@@ -51,4 +55,27 @@ describe('App', () => {
     expect(winterPark).toBeInTheDocument();
     expect(vail).toBeInTheDocument();
   });
+
+  // it('Should display local breweries when a user clicks a ski resort', async () => {
+  //   getAllBreweries.mockResolvedValue(
+  //     { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Mars', postal_code: '12345', website_url: 'URL' },
+  //     { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Saturn', postal_code: '67890', website_url: 'URL' }
+  //   )
+  //   const { getByText } = render(
+  //     <MemoryRouter>
+  //       <App />
+  //     </MemoryRouter>
+  //   )
+  //
+  //   const aspen = screen.getByText('Aspen');
+  //   const favorites = screen.getByText('Favorites');
+  //
+  //   expect(aspen).toBeInTheDocument();
+  //   expect(favorites).toBeInTheDocument();
+  //
+  //   userEvent.click(aspen);
+  //
+  //   const name1 = await waitFor(() => screen.getByText('Brewery1'))
+  //   expect(name1).toBeInTheDocument()
+  // });
 });
