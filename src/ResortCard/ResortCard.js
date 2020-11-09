@@ -8,7 +8,7 @@ const ResortCard = (props) => {
       <section key={props.id} className='resort-card'>
           <span className='resort-link'>
             <Link to={`/${props.name}`}>
-              <img className='resort-image' src={props.image} alt={`Photo of ${props.name} ski resort`}/>
+              <img className='resort-image' src={props.image} alt={`${props.name} ski resort`}/>
               {props.name}
             </ Link>
           </span>
