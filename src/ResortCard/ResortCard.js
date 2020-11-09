@@ -15,6 +15,7 @@ const ResortCard = (props) => {
       </section>
   )
 }
+
 export default ResortCard
 
 ResortCard.propTypes = {
