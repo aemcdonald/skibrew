@@ -11,6 +11,12 @@
     font-weight: 400;
 }
 
+.empty-favs {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 1180px) {
   .fav-container {
     grid-template-columns: repeat(3, 1fr);
