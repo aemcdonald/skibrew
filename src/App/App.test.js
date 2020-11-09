@@ -121,13 +121,12 @@ describe('App', () => {
     expect(headings[2]).not.toBe('Aspen Brewery');
   });
 
-
-  it('Should not show breweries from a different area than selected', async () => {
+  it('Should allow a user to favorite the brewery & see it in their favorites list', async () => {
     getAllBreweries.mockResolvedValueOnce([
-        { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
-        { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
-        { id: 2, name: 'Brewery3', phone: '1234567890', street: '456 Def St', city: 'Vail', postal_code: '67890', website_url: 'URL' }
-      ])
+      { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
+      { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
+      { id: 2, name: 'Brewery3', phone: '1234567890', street: '456 Def St', city: 'Vail', postal_code: '67890', website_url: 'URL' }
+    ])
 
     const { getByText } = render(
       <MemoryRouter>
