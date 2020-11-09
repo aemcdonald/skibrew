@@ -72,7 +72,7 @@ describe('App', () => {
         { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
         { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' }
       ], [
-        { id: 12, name: 'Brewery12', phone: '12345678901', street: '123 Abc St', city: 'Vail', postal_code: '12345', website_url: 'URL' }
+        { id: 12, name: 'Brewery3', phone: '12345678901', street: '123 Abc St', city: 'Vail', postal_code: '12345', website_url: 'URL' }
     ])
 
     const { getByText } = render(
@@ -90,5 +90,46 @@ describe('App', () => {
 
     expect(brewery1).toBeInTheDocument();
     expect(brewery2).toBeInTheDocument();
-  })
+
+    //expect that brewery3 is not in the document??
+  });
+
+  it('Should allow a fire a function when a user clicks the add to favorites button', async () => {
+    getAllBreweries.mockResolvedValueOnce([
+        { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
+        { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
+        { id: 2, name: 'Brewery3', phone: '1234567890', street: '456 Def St', city: 'Vail', postal_code: '67890', website_url: 'URL' }
+      ])
+
+    const { getByText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+
+    //A user clicks on the resort they're skiing at
+    const vailResort = screen.getByText('Vail');
+    userEvent.click(vailResort);
+
+    //the user should see breweries near Vail
+    const brewery3 = await waitFor(() => screen.getByText('Brewery3'));
+    expect(brewery3).toBeInTheDocument();
+
+    //the user selects the brewery to add to favorites
+    const favBtn = screen.getByText("Add to Favorites");
+
+    //the user clicks the Favorites link to view their favorites
+    expect(favBtn).toBeInTheDocument();
+    userEvent.click(favBtn)
+
+    //the user clicks the link to take them to their favorites page
+    const favLink = screen.getByText('Favorites')
+    userEvent.click(favLink)
+
+    //the user can view the brewery that they added to their favorites
+    const brewery3Fav = await waitFor(() => screen.getByText('Brewery3'));
+    const brewery3Address = await waitFor(() => screen.getByText('Address: 456 Def St'));
+    expect(brewery3Fav).toBeInTheDocument();
+    expect(brewery3Address).toBeInTheDocument();
+  });
 });
