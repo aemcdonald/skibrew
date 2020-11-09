@@ -15,7 +15,7 @@ describe('BreweryContainer', () => {
         breweries={mockBreweries}
       />)
 
-    const title = screen.getByText('Apres Ski Brewery Choices')
+    const title = screen.getByText('Brewery Options Nearby');
     expect(title).toBeInTheDocument();
   });
 

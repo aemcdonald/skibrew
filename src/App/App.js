@@ -44,11 +44,12 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const allBreweries = await getAllBreweries()
-    .catch(error => {
+    try {
+      const allBreweries = await getAllBreweries()
+      this.setState({ breweries: allBreweries.flat()})
+    } catch(error) {
       this.setState({ error: 'Failed to retrieve breweries'})
-    })
-    this.setState({ breweries: allBreweries.flat()})
+    }
   }
 
   render() {
@@ -73,6 +74,7 @@ class App extends Component {
         </nav>
           <Switch>
               <Route exact path='/'>
+              <h2 className='resort-container-title'>Select Your Ski Area</h2>
               <section className='resort-card-container'>
                 {resortCards}
               </section>
