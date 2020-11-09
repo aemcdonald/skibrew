@@ -45,7 +45,7 @@ describe('ResortCard', () => {
           />
         </BrowserRouter>
       )
-    const resortImage = screen.getByAltText('Photo of Aspen ski resort');
+    const resortImage = screen.getByAltText('Aspen ski resort');
     expect(resortImage).toBeInTheDocument();
   });
 });
