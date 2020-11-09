@@ -70,9 +70,8 @@ describe('App', () => {
   it('Should display local breweries when a user clicks a ski resort', async () => {
     getAllBreweries.mockResolvedValueOnce([
         { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
-        { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' }
-      ], [
-        { id: 12, name: 'Brewery3', phone: '12345678901', street: '123 Abc St', city: 'Vail', postal_code: '12345', website_url: 'URL' }
+        { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
+        { id: 3, name: 'Brewery3', phone: '12345678901', street: '123 Abc St', city: 'Vail', postal_code: '12345', website_url: 'URL' }
     ])
 
     const { getByText } = render(
@@ -86,7 +85,7 @@ describe('App', () => {
     userEvent.click(aspen);
 
     const brewery1 = await waitFor(() => screen.getByText('Brewery1'));
-    const brewery2 = await waitFor(() => screen.getByText('Brewery1'));
+    const brewery2 = await waitFor(() => screen.getByText('Brewery2'));
 
     expect(brewery1).toBeInTheDocument();
     expect(brewery2).toBeInTheDocument();
