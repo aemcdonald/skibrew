@@ -8,6 +8,7 @@
   font-size: 4em;
   font-weight: 300;
   color: white;
+  margin-left: 10px;
 }
 
 .home-header {
@@ -16,6 +17,7 @@
   margin: 10px;
   height: 110px;
   background-color: #585E61;
+  border-radius: 10px;
 }
 
 .fav-link {
@@ -32,7 +34,7 @@ a {
 .resort-container-title {
   text-align: center;
   font-size: 30px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .main-area {
