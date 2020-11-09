@@ -36,7 +36,7 @@ describe('BreweryCard', () => {
     expect(favBtn).toBeInTheDocument();
   });
 
-  it('Should fire a function with the correct argument when clicked', () => {
+  it('Should fire with the correct argument when add to fav btn clicked', () => {
     const mockFn = jest.fn()
     const mockBrewery = {
       name: 'Storm Peak Brewing',
@@ -64,7 +64,7 @@ describe('BreweryCard', () => {
     expect(mockFn).toHaveBeenCalledWith(mockBrewery);
   });
 
-  it('Should not render the favorite button if passed onFav props', () => {
+  it('Should render the favorite button if passed certain props', () => {
     const mockBrewery = {
       name: 'Storm Peak Brewing',
       phone: '1234567890',
