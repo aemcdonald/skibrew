@@ -7,20 +7,24 @@
   text-align: left;
   font-size: 4em;
   font-weight: 300;
+  color: white;
+  margin-left: 10px;
 }
 
 .home-header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  border: solid 2px;
   height: 110px;
+  background-color: #585E61;
+  border-radius: 10px;
 }
 
 .fav-link {
   align-self: center;
   margin-right: 10px;
   font-size: 20px;
+  color: white;
 }
 
 a {
@@ -30,5 +34,16 @@ a {
 .resort-container-title {
   text-align: center;
   font-size: 30px;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.main-area {
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 900px;
+  opacity: 0.91;
+  /* background-size:100% 100vh; */
+  /* width: 100%; */
 }

@@ -4,6 +4,14 @@ import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import Favorites from '../Favorites/Favorites';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import { getAllBreweries } from '../apiCalls';
+import aspen from '../images/aspen.jpg';
+import breck from '../images/breck.jpg';
+import crestedButte from '../images/cb.jpg';
+import steamboat from '../images/steamboat.jpg';
+import silverton from '../images/silverton.jpg';
+import telluride from '../images/telluride.jpg';
+import winterPark from '../images/winterpark.jpg';
+import vail from '../images/vail.jpg';
 import './App.css';
 
 class App extends Component {
@@ -12,15 +20,15 @@ class App extends Component {
     this.state = {
       resorts: [
         // { id: 1, name: 'Arapahoe Basin' },
-        { id: 2, name: 'Aspen' },
-        { id: 3, name: 'Breckenridge' },
+        { id: 2, name: 'Aspen', image: aspen },
+        { id: 3, name: 'Breckenridge', image: breck },
         // { id: 4, name: 'Copper Mountain' },
-        { id: 5, name: 'Crested Butte' },
+        { id: 5, name: 'Crested Butte', image: crestedButte },
         // { id: 6, name: 'Keystone' },
-        { id: 7, name: 'Steamboat Springs' },
-        { id: 8, name: 'Telluride' },
-        { id: 9, name: 'Winter Park' },
-        { id: 10, name: 'Vail' }
+        { id: 7, name: 'Steamboat Springs', image: steamboat },
+        { id: 8, name: 'Telluride', image: telluride },
+        { id: 9, name: 'Winter Park', image: winterPark },
+        { id: 10, name: 'Vail', image: vail }
       ],
       breweries: [],
       favorites: [],
@@ -51,12 +59,13 @@ class App extends Component {
             key={resort.id}
             id={resort.id}
             name={resort.name}
+            image={resort.image}
           />
       )
     })
 
     return(
-      <main>
+      <main className='main-area'>
         <nav className='home-header'>
           <Link to='/'>
             <h1 className='home-title'>Ski Brew</h1>
