@@ -13,7 +13,7 @@ const BreweryCard = (props) => {
         {!props.deleteFav &&
           <button className='fav-btn' data-testid='favBtn' type='button'onClick={() => props.handleClick(props.brewery)}>Add to Favorites</button>}
       {props.deleteFav &&
-    <button className='delete-fav-btn' data-testid='delete-favBtn' type='button'onClick={() => props.deleteFav(props.brewery)}>Remove from Favorites</button>}
+    <button className='delete-fav-btn' data-testid='delete-favBtn' type='button'onClick={() => props.deleteFav(props.brewery)}>Remove</button>}
     </section>
   )
 }
