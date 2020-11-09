@@ -173,4 +173,29 @@ describe('BreweryCard', () => {
     const deleteBtn = screen.queryByTestId('delete-favBtn');
     expect(deleteBtn).not.toBeInTheDocument();
   });
+
+  it('Should fire a function when delete button is clicked', () => {
+    const mockDeleteFn = jest.fn()
+    const mockBrewery = {
+      name: 'Storm Peak Brewing',
+      phone: '1234567890',
+      street: '123 Abc St',
+      city: 'Steamboat Springs',
+      postal_code: '12345',
+      website_url: 'URL'
+    }
+
+    const { getByText, queryByTestId } = render(
+        <BreweryCard
+          key={1}
+          brewery={mockBrewery}
+          deleteFav={mockDeleteFn}
+        />
+    )
+
+    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    userEvent.click(deleteBtn);
+
+    expect(mockDeleteFn).toHaveBeenCalledTimes(1);
+  });
 });
