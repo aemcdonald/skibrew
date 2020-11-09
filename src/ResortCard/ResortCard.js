@@ -19,5 +19,6 @@ export default ResortCard
 
 ResortCard.propTypes = {
   id: PropTypes.number,
-  name: PropTypes.string
+  name: PropTypes.string,
+  image: PropTypes.string
 }
