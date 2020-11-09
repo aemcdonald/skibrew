@@ -33,7 +33,7 @@ describe('App', () => {
     expect(favsLink).toBeInTheDocument();
   });
 
-  it('Should display an instruction to the user to selec their ski area', () => {
+  it('Should display an instruction to the user to select their ski area', () => {
     const { getByText } = render(
       <BrowserRouter>
         <App />
