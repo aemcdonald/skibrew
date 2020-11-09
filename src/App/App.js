@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ResortCard from '../ResortCard/ResortCard';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import Favorites from '../Favorites/Favorites';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { getAllBreweries } from '../apiCalls';
 import aspen from '../images/aspen.jpg';
 import breck from '../images/breck.jpg';
