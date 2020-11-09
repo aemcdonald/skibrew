@@ -7,20 +7,22 @@
   text-align: left;
   font-size: 4em;
   font-weight: 300;
+  color: white;
 }
 
 .home-header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  border: solid 2px;
   height: 110px;
+  background-color: #585E61;
 }
 
 .fav-link {
   align-self: center;
   margin-right: 10px;
   font-size: 20px;
+  color: white;
 }
 
 a {
