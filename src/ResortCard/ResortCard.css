@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   padding: 20px;
 }
 
@@ -16,6 +16,8 @@
   padding: 10px;
   text-align: center;
   border: solid .5px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .resort-image {
@@ -23,13 +25,13 @@
   height: 275px;
   flex-direction: column;
   transition: 1s ease;
+  border-radius: 10px;
 }
 
 .resort-image:hover {
   transform: scale(1.2);
   transition: 1s ease;
 }
-
 
 .resort-link {
   display: block;
