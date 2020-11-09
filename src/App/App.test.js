@@ -90,11 +90,40 @@ describe('App', () => {
 
     expect(brewery1).toBeInTheDocument();
     expect(brewery2).toBeInTheDocument();
-
-    //expect that brewery3 is not in the document??
   });
 
-  it('Should allow a fire a function when a user clicks the add to favorites button', async () => {
+  it('Should not display breweries that are not near the resort', async () => {
+    getAllBreweries.mockResolvedValueOnce([
+        { id: 1, name: 'Aspen Brewery', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
+        { id: 2, name: 'Vail Brewery', phone: '1234567890', street: '456 Def St', city: 'Vail', postal_code: '67890', website_url: 'URL' }
+      ])
+
+    const { getByText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+
+    //User selects the Vail on the home page
+    const vailResort = screen.getByText('Vail');
+    userEvent.click(vailResort);
+
+    //User views breweries near Vail
+    const vailBrewery = await waitFor(() => screen.getByText('Vail Brewery'));
+    expect(vailBrewery).toBeInTheDocument();
+
+    //Select all headers on the page
+    const headings = screen.getAllByRole('heading')
+    expect(headings).toHaveLength(3)
+
+    //The user does NOT see breweries from another city
+    expect(headings[0]).not.toBe('Aspen Brewery');
+    expect(headings[1]).not.toBe('Aspen Brewery');
+    expect(headings[2]).not.toBe('Aspen Brewery');
+  });
+
+
+  it('Should not show breweries from a different area than selected', async () => {
     getAllBreweries.mockResolvedValueOnce([
         { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
         { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
