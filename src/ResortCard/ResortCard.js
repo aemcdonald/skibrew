@@ -6,9 +6,9 @@ import './ResortCard.css';
 const ResortCard = (props) => {
   return(
       <section key={props.id} className='resort-card'>
-          <img className='resort-image' src={props.image} alt={`Photo of ${props.name} ski resort`}/>
           <span class='resort-link'>
             <Link to={`/${props.name}`}>
+              <img className='resort-image' src={props.image} alt={`Photo of ${props.name} ski resort`}/>
               {props.name}
             </ Link>
           </span>
