@@ -64,6 +64,27 @@ describe('BreweryCard', () => {
     expect(mockFn).toHaveBeenCalledWith(mockBrewery);
   });
 
+  it('Should link to the brewery\'s website', () => {
+    const mockBrewery = {
+      name: 'Storm Peak Brewing',
+      phone: '1234567890',
+      street: '123 Abc St',
+      city: 'Steamboat Springs',
+      postal_code: '12345',
+      website_url: 'http://www.yaybeer.com'
+    }
+
+    const { getByText, queryByTestId, getByRole } = render(
+        <BreweryCard
+          key={1}
+          brewery={mockBrewery}
+        />
+    )
+
+    const website = document.querySelector('a').getAttribute('href');
+    expect(website).toBe('http://www.yaybeer.com');
+  });
+
   it('Should render the favorite button if passed certain props', () => {
     const mockBrewery = {
       name: 'Storm Peak Brewing',
@@ -85,26 +106,25 @@ describe('BreweryCard', () => {
     expect(favBtn).toBeInTheDocument()
   });
 
-  // it('Should not show the favorite button if it is not passed certain props', () => {
-  //   const mockBrewery = {
-  //     name: 'Storm Peak Brewing',
-  //     phone: '1234567890',
-  //     street: '123 Abc St',
-  //     city: 'Steamboat Springs',
-  //     postal_code: '12345',
-  //     website_url: 'URL'
-  //   }
-  //
-  //   const { getByText, queryByTestId } = render(
-  //       <BreweryCard
-  //         key={1}
-  //         brewery={mockBrewery}
-  //         onFav={true}
-  //       />
-  //   )
-  //
-  //   const favBtn = screen.queryByTestId('favBtn')
-  //   screen.debug()
-  //   expect(favBtn).not.toBeInTheDocument()
-  // });
+  it('Should not show the favorite button without certain props', () => {
+    const mockBrewery = {
+      name: 'Storm Peak Brewing',
+      phone: '1234567890',
+      street: '123 Abc St',
+      city: 'Steamboat Springs',
+      postal_code: '12345',
+      website_url: 'URL'
+    }
+
+    const { getByText, queryByTestId } = render(
+        <BreweryCard
+          key={1}
+          brewery={mockBrewery}
+          onFav={true}
+        />
+    )
+
+    const favBtn = screen.queryByTestId('favBtn')
+    expect(favBtn).not.toBeInTheDocument()
+  });
 });
