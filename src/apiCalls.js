@@ -1,5 +1,5 @@
 export const getAllBreweries = async () => {
-  const cities = ['crested_butte', 'telluride', 'steamboat_springs', 'breckenridge', 'winter_park', 'vail', 'aspen', 'silverthorne', 'frisco', 'dillon']
+  const cities = ['crested_butte', 'telluride', 'steamboat_springs', 'breckenridge', 'winter_park', 'vail', 'aspen', 'silverthorne', 'frisco', 'dillon', 'silverton' ]
   const allBreweriesData = await cities.map(city => {
     return getBreweryByCity(city)})
   const data = Promise.all(allBreweriesData)
