@@ -17,6 +17,7 @@ const Favorites = (props) => {
   return(
     <section>
       <h3 className='fav-title'>Favorites</h3>
+      {favoriteBreweries.length === 0 && <h4 className='empty-favs'>No favorite breweries yet, add some!</h4>}
       <div className='fav-container'>
         {favoriteBreweries}
       </div>
