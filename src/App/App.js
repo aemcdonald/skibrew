@@ -8,6 +8,7 @@ import aspen from '../images/aspen.jpg';
 import breck from '../images/breck.jpg';
 import crestedButte from '../images/cb.jpg';
 import steamboat from '../images/steamboat.jpg';
+import silverton from '../images/silverton.jpg';
 import telluride from '../images/telluride.jpg';
 import winterPark from '../images/winterpark.jpg';
 import vail from '../images/vail.jpg';
