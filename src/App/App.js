@@ -65,7 +65,7 @@ class App extends Component {
     })
 
     return(
-      <main>
+      <main className='main-area'>
         <nav className='home-header'>
           <Link to='/'>
             <h1 className='home-title'>Ski Brew</h1>
