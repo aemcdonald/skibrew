@@ -107,6 +107,7 @@ describe('BreweryCard', () => {
   });
 
   it('Should not show the favorite button without certain props', () => {
+    const mockDeleteFn = jest.fn()
     const mockBrewery = {
       name: 'Storm Peak Brewing',
       phone: '1234567890',
@@ -120,7 +121,7 @@ describe('BreweryCard', () => {
         <BreweryCard
           key={1}
           brewery={mockBrewery}
-          onFav={true}
+          deleteFav={mockDeleteFn}
         />
     )
 
