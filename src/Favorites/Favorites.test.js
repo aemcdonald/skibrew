@@ -19,6 +19,19 @@ describe('Favorites', () => {
     expect(title).toBeInTheDocument();
   })
 
+  it('Should display a message to the user if their favorites list is empty', () => {
+    const mockFavs = []
+
+    const { getByText } = render(
+      <Favorites
+        favorites={mockFavs}
+      />
+    )
+
+    const emptyFavMsg = screen.getByText('No favorite breweries yet, add some!');
+    expect(emptyFavMsg).toBeInTheDocument();
+  });
+
   it('Should display a user\'s favorite Breweries', () => {
     const mockFavs = [
       { id: 1, name: 'Brewery1', phone: '1112223333', street: '123 Abc St', city: 'Mars', postal_code: '12345', website_url: 'URL1' },
@@ -44,5 +57,5 @@ describe('Favorites', () => {
     expect(brewery2Street).toBeInTheDocument();
     expect(brewery1City).toBeInTheDocument();
     expect(brewery2City).toBeInTheDocument();
-  })
+  });
 });
