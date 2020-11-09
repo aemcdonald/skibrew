@@ -19,16 +19,14 @@ class App extends Component {
     super();
     this.state = {
       resorts: [
-        // { id: 1, name: 'Arapahoe Basin' },
-        { id: 2, name: 'Aspen', image: aspen },
-        { id: 3, name: 'Breckenridge', image: breck },
-        // { id: 4, name: 'Copper Mountain' },
-        { id: 5, name: 'Crested Butte', image: crestedButte },
-        // { id: 6, name: 'Keystone' },
-        { id: 7, name: 'Steamboat Springs', image: steamboat },
-        { id: 8, name: 'Telluride', image: telluride },
-        { id: 9, name: 'Winter Park', image: winterPark },
-        { id: 10, name: 'Vail', image: vail }
+        { id: 1, name: 'Aspen', image: aspen },
+        { id: 2, name: 'Breckenridge', image: breck },
+        { id: 3, name: 'Crested Butte', image: crestedButte },
+        { id: 4, name: 'Silverton', image: silverton },
+        { id: 5, name: 'Steamboat Springs', image: steamboat },
+        { id: 6, name: 'Telluride', image: telluride },
+        { id: 7, name: 'Winter Park', image: winterPark },
+        { id: 8, name: 'Vail', image: vail }
       ],
       breweries: [],
       favorites: [],
