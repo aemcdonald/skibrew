@@ -19,7 +19,7 @@
 }
 
 .resort-image {
-  width: 220px;
+  width: 100%;
   height: 275px;
   flex-direction: column;
 }
