@@ -159,4 +159,47 @@ describe('App', () => {
     expect(brewery3Fav).toBeInTheDocument();
     expect(brewery3Address).toBeInTheDocument();
   });
+
+  it('Should allow a user to favorite a brewery & delete it from their favorites list', async () => {
+    getAllBreweries.mockResolvedValueOnce([
+      { id: 1, name: 'Brewery1', phone: '1234567890', street: '123 Abc St', city: 'Aspen', postal_code: '12345', website_url: 'URL' },
+      { id: 2, name: 'Brewery2', phone: '1234567890', street: '456 Def St', city: 'Aspen', postal_code: '67890', website_url: 'URL' },
+      { id: 2, name: 'Brewery3', phone: '1234567890', street: '456 Def St', city: 'Vail', postal_code: '67890', website_url: 'URL' }
+    ])
+
+    const { getByText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+
+    //A user clicks on the resort they're skiing at
+    const vailResort = screen.getByText('Vail');
+    userEvent.click(vailResort);
+
+    //the user should see breweries near Vail
+    const brewery3 = await waitFor(() => screen.getByText('Brewery3'));
+    expect(brewery3).toBeInTheDocument();
+
+    //the user selects the brewery to add to favorites
+    const favBtn = screen.getByText("Add to Favorites");
+
+    //the user clicks the Favorites link to view their favorites
+    expect(favBtn).toBeInTheDocument();
+    userEvent.click(favBtn)
+
+    //the user clicks the link to take them to their favorites page
+    const favLink = screen.getByText('Favorites')
+    userEvent.click(favLink)
+
+    //the user can delete brewery from their favorites
+    const brewery3Fav = await waitFor(() => screen.getByText('Brewery3'));
+    const brewery3DeleteBtn = await waitFor(() => screen.getByText('Remove'))
+    expect(brewery3Fav).toBeInTheDocument();
+    expect(brewery3DeleteBtn).toBeInTheDocument();
+    userEvent.click(brewery3DeleteBtn);
+
+    //the brewery should be removed from the favorites page & not display
+    expect(brewery3Fav).not.toBeInTheDocument();
+  });
 });

@@ -43,6 +43,11 @@ class App extends Component {
     }
   }
 
+  removeFavorite = (removedBrewery) => {
+    const filteredBreweries = this.state.favorites.filter(brewery => brewery.name !== removedBrewery.name)
+    this.setState({ favorites: [...filteredBreweries] })
+  }
+
   componentDidMount = async () => {
     try {
       const allBreweries = await getAllBreweries()
@@ -80,13 +85,13 @@ class App extends Component {
               </section>
               </Route>
             <Route exact path='/Favorites'>
-              <Favorites favorites={this.state.favorites}/>
+              <Favorites favorites={this.state.favorites} deleteFav={this.removeFavorite}/>
             </Route>
             <Route exact path='/:resort' render={({ match }) => {
               const resortBreweries = this.state.breweries.filter(brewery => {
                 return match.params.resort === brewery.city
               })
-              return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite} />
+              return <BreweryContainer breweries={resortBreweries} addFavorite={this.addFavorite}/>
             }} />
           </Switch>
       </main>
