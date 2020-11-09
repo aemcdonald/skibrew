@@ -194,7 +194,7 @@ describe('App', () => {
 
     //the user can delete brewery from their favorites
     const brewery3Fav = await waitFor(() => screen.getByText('Brewery3'));
-    const brewery3DeleteBtn = await waitFor(() => screen.getByText('Remove from Favorites'))
+    const brewery3DeleteBtn = await waitFor(() => screen.getByText('Remove'))
     expect(brewery3Fav).toBeInTheDocument();
     expect(brewery3DeleteBtn).toBeInTheDocument();
     userEvent.click(brewery3DeleteBtn);
