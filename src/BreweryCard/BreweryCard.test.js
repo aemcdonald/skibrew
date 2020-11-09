@@ -151,4 +151,26 @@ describe('BreweryCard', () => {
     const deleteBtn = screen.queryByTestId('delete-favBtn');
     expect(deleteBtn).toBeInTheDocument();
   });
+
+  it('Should not render the delete from favorites button when passed different props', () => {
+    const mockDeleteFn = jest.fn()
+    const mockBrewery = {
+      name: 'Storm Peak Brewing',
+      phone: '1234567890',
+      street: '123 Abc St',
+      city: 'Steamboat Springs',
+      postal_code: '12345',
+      website_url: 'URL'
+    }
+
+    const { getByText, queryByTestId } = render(
+        <BreweryCard
+          key={1}
+          brewery={mockBrewery}
+        />
+    )
+
+    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    expect(deleteBtn).not.toBeInTheDocument();
+  });
 });
