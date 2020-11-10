@@ -6,7 +6,7 @@
   border-radius: 10px;
 }
 
-.fav-btn {
+.fav-btn, .delete-fav-btn {
   border-radius: 5px;
   height: 30px;
   width: 150px;

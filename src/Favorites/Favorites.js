@@ -9,7 +9,7 @@ const Favorites = (props) => {
       <BreweryCard
         key={brewery.id}
         brewery={brewery}
-        onFav={true}
+        deleteFav={props.deleteFav}
       />
     )
   })
@@ -24,6 +24,7 @@ const Favorites = (props) => {
     </section>
   )
 }
+
 export default Favorites
 
 Favorites.propTypes = {

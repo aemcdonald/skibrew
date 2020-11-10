@@ -15,7 +15,7 @@ describe('BreweryContainer', () => {
         breweries={mockBreweries}
       />)
 
-    const title = screen.getByText('Brewery Options Nearby');
+    const title = getByText('Brewery Options Nearby');
     expect(title).toBeInTheDocument();
   });
 
@@ -29,13 +29,13 @@ describe('BreweryContainer', () => {
       <BreweryContainer
         breweries={mockBreweries}
       />)
-
-    const brewery1Name = screen.getByText('Brewery1');
-    const brewery2Name = screen.getByText('Brewery2');
-    const brewery1Street = screen.getByText('Address: 123 Abc St');
-    const brewery2Street = screen.getByText('Address: 456 Def St');
-    const brewery1City = screen.getByText('Mars, CO 12345');
-    const brewery2City = screen.getByText('Saturn, CO 67890');
+   
+    const brewery1Name = getByText('Brewery1');
+    const brewery2Name = getByText('Brewery2');
+    const brewery1Street = getByText('Address: 123 Abc St');
+    const brewery2Street = getByText('Address: 456 Def St');
+    const brewery1City = getByText('Mars, CO 12345');
+    const brewery2City = getByText('Saturn, CO 67890');
 
     expect(brewery1Name).toBeInTheDocument();
     expect(brewery2Name).toBeInTheDocument();
