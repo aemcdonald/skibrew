@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/aemcdonald/skibrew">
-    <img src="/src/skibrew.gif" alt="image of skibrew application" width="600">
+    <img src="/src/demo.gif" alt="image of skibrew application" width="600">
   </a>
   <h3 align="center">SkiBrew</h3>
   <p align="center">
@@ -32,12 +32,8 @@ In your terminal:
 3. Start application- `npm start`
 
 ## Usage
-### Giphys...
-![Giphy]()
-
-### Giphys...
-![Giphy]()
-
+### In Action
+![Giphy](/src/demo.gif)
 
 See the [open issues](https://github.com/aemcdonald/skibrew/projects) for a list of proposed features and known issues.
 
