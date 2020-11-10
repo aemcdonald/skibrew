@@ -23,5 +23,5 @@ export default BreweryCard;
 BreweryCard.propTypes = {
   brewery: PropTypes.object,
   handleClick: PropTypes.func,
-  onFav: PropTypes.bool
+  deleteFav: PropTypes.func
 }

@@ -31,12 +31,12 @@ describe('ResortCard', () => {
       </BrowserRouter>
     )
 
-    const resortLink = screen.getByRole('link', { name: /Aspen/i});
+    const resortLink = getByRole('link', { name: /Aspen/i});
     expect(resortLink).toBeInTheDocument();
   });
 
   it('Shoulder render an image', () => {
-    const { getByRole } = render(
+    const { getByRole, getByAltText } = render(
         <BrowserRouter>
           <ResortCard
             key={1}
@@ -45,7 +45,7 @@ describe('ResortCard', () => {
           />
         </BrowserRouter>
       )
-    const resortImage = screen.getByAltText('Photo of Aspen ski resort');
+    const resortImage = getByAltText('Aspen ski resort');
     expect(resortImage).toBeInTheDocument();
   });
 });

@@ -24,6 +24,7 @@ const Favorites = (props) => {
     </section>
   )
 }
+
 export default Favorites
 
 Favorites.propTypes = {

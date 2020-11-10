@@ -23,11 +23,11 @@ describe('BreweryCard', () => {
         />
     )
 
-    const name = screen.getByText('Storm Peak Brewing');
-    const address = screen.getByText('Address: 123 Abc St')
-    const location = screen.getByText('Steamboat Springs, CO 12345');
-    const website = screen.getByText('View Website');
-    const favBtn = screen.getByText('Add to Favorites');
+    const name = getByText('Storm Peak Brewing');
+    const address = getByText('Address: 123 Abc St')
+    const location = getByText('Steamboat Springs, CO 12345');
+    const website = getByText('View Website');
+    const favBtn = getByText('Add to Favorites');
 
     expect(name).toBeInTheDocument();
     expect(address).toBeInTheDocument();
@@ -55,7 +55,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const favBtn = screen.getByText('Add to Favorites');
+    const favBtn = getByText('Add to Favorites');
     expect(favBtn).toBeInTheDocument();
 
     userEvent.click(favBtn);
@@ -102,7 +102,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const favBtn = screen.queryByTestId('favBtn')
+    const favBtn = queryByTestId('favBtn')
     expect(favBtn).toBeInTheDocument()
   });
 
@@ -125,7 +125,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const favBtn = screen.queryByTestId('favBtn')
+    const favBtn = queryByTestId('favBtn')
     expect(favBtn).not.toBeInTheDocument()
   });
 
@@ -148,7 +148,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    const deleteBtn = queryByTestId('delete-favBtn');
     expect(deleteBtn).toBeInTheDocument();
   });
 
@@ -170,7 +170,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    const deleteBtn = queryByTestId('delete-favBtn');
     expect(deleteBtn).not.toBeInTheDocument();
   });
 
@@ -193,7 +193,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    const deleteBtn = queryByTestId('delete-favBtn');
     userEvent.click(deleteBtn);
 
     expect(mockDeleteFn).toHaveBeenCalledTimes(1);
@@ -218,7 +218,7 @@ describe('BreweryCard', () => {
         />
     )
 
-    const deleteBtn = screen.queryByTestId('delete-favBtn');
+    const deleteBtn = queryByTestId('delete-favBtn');
     userEvent.click(deleteBtn);
 
     expect(mockDeleteFn).toHaveBeenCalledTimes(1);
